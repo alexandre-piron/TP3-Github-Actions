@@ -7,6 +7,9 @@ env:
   MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@tp3-github-actions:27017"
 jobs:
   build-and-test:
+  container-job:
+    runs-on: ubuntu:latest
+    container: tp3-github-actions
     name: Run unit tests
     runs-on: ubuntu-latest
     defaults:
@@ -15,9 +18,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-    container-job:
-      runs-on: ubuntu:latest
-      container: tp3-github-actions
     steps:
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
