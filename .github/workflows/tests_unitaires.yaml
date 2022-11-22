@@ -9,9 +9,6 @@ jobs:
   build-and-test:
     name: Run unit tests
     runs-on: ubuntu-latest
-    container:
-      runs-on: ubuntu:latest
-      container: tp3-github-actions
     defaults:
       run:
         working-directory: ./api
