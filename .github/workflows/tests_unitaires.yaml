@@ -43,10 +43,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-        
-      -container-job:
-        runs-on: ubuntu-latest
-        container: tp3-github-actions
-        services:
-          redis:
-            image: redis
