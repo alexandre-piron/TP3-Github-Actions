@@ -26,7 +26,6 @@ jobs:
       - name : Install dependencies
         run : yarn
       - run: yarn test
-      - run: yarn test:e2e
       - run: yarn build
 
       - name: Extraction des métadonnées (tags, labels) pour Docker
@@ -43,3 +42,10 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+        
+      -container-job:
+        runs-on: ubuntu-latest
+        container: tp3-github-actions
+        services:
+          redis:
+            image: redis
