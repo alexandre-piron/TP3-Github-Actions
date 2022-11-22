@@ -36,5 +36,4 @@ jobs:
           push: true
           tags: alex3003/monapi:${{ github.sha }}
 
-      env:
-        MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
+      MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
