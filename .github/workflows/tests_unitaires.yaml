@@ -33,6 +33,5 @@ jobs:
         with:
           context: ./api
           push: true
-          image: alex3003/mon-api
-          tags: ${{github.sha}}
+          tags: alex3003/mon-api:${{github.sha}}
           labels: ${{ steps.meta.outputs.labels }}
