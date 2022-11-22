@@ -7,11 +7,11 @@ env:
   MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@tp3-github-actions:27017"
 jobs:
   build-and-test:
-    container-job:
-      runs-on: ubuntu:latest
-      container: tp3-github-actions
     name: Run unit tests
     runs-on: ubuntu-latest
+    container:
+      runs-on: ubuntu:latest
+      container: tp3-github-actions
     defaults:
       run:
         working-directory: ./api
