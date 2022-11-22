@@ -4,7 +4,7 @@ on:
   push:
     branches : [main]
 env:
-  MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
+  MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@tp3-github-actions:27017"
 jobs:
   build-and-test:
     name: Run unit tests
