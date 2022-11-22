@@ -3,6 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches : [main]
+env:
+  MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
 jobs:
   build-and-test:
     name: Run unit tests
@@ -35,5 +37,3 @@ jobs:
           context: ./api
           push: true
           tags: alex3003/monapi:${{ github.sha }}
-
-      MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@mongo:27017"
