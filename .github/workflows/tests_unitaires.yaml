@@ -26,7 +26,6 @@ jobs:
       - name : Install dependencies
         run : yarn
       - run: yarn test
-      - run: yarn test:e2e
       - run: yarn build
 
       - name: Extraction des métadonnées (tags, labels) pour Docker
