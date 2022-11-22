@@ -14,6 +14,10 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
+      - name : Connexion à Docker 
+        uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -24,11 +28,6 @@ jobs:
       - run: yarn test
       - run: yarn test:e2e
       - run: yarn build
-
-      - name : Connexion à Docker 
-        uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extraction des métadonnées (tags, labels) pour Docker
         id: meta
